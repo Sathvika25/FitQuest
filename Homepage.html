@@ -11,19 +11,48 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>HomePage</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Acme&family=Exo+2:ital,wght@0,100..900;1,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
-        <style>
-            #logo{
-                font-family: "Exo 2", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 600;
-  font-style: normal;
-  color: #474747;
-            }
-        </style>
+    <style>
+        #logo {
+            font-family: "Exo 2", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 600;
+            font-style: normal;
+            color: #474747;
+        }
+
+        #img1,
+        #img2,
+        #img3 {
+            border-radius: 20px;
+        }
+        #heading,
+        #Resources{
+            font-family: "Acme", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 74px;
+        }
+
+        .nav-link:hover {
+    border: 2px solid #474747;
+    border-radius: 10px;
+    box-shadow: 0px 3px 0px #474747;
+  }
+        .clickbtn:hover{
+            border: 2px solid #1d3557;
+    border-radius: 10px;
+    box-shadow: 0px 3px 0px #1d3557;
+        }
+    </style>
 </head>
 
 <body>
@@ -31,20 +60,20 @@
         <div class="container-fluid">
             <div class="container" style="display: flex;">
                 <img style="margin-left: 40px;" src="./logo_1 nobg.png" alt="" height="60px" width="110px">
-                <h1><a href="" class="nav-link" id="logo">&nbsp;<span style="color: #d42574;">Fit</span>Quest</a></h1>
+                <h1 id="logo">&nbsp;<span style="color: #d42574;">Fit</span>Quest</h1>
                 <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar">
                     <span class="navbar-toggler-icon"></span>
                 </button>
             </div>
             <div class="container navbar-collapse collapse" id="navbar">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a href="#" class="nav-link"><i
+                    <li class="nav-item mx-1"><a href="#" class="nav-link"><i
                                 class="fa-solid fa-house">&nbsp;&nbsp;Home&nbsp;&nbsp;&nbsp;</i></a></li>
-                    <li class="nav-item"><a href="#" class="nav-link"><i
+                    <li class="nav-item mx-1"><a href="#" class="nav-link"><i
                                 class="fa-solid fa-users-line">&nbsp;&nbsp;Category&nbsp;&nbsp;&nbsp;</i></a></li>
-                    <li class="nav-item"><a href="" class="nav-link"><i
+                    <li class="nav-item mx-1"><a href="" class="nav-link"><i
                                 class="fa-solid fa-newspaper">&nbsp;&nbsp;Resources&nbsp;&nbsp;&nbsp;</i></a></li>
-                    <li class="nav-item"><a href="" class="nav-link"><i class="fa-solid fa-phone">&nbsp;&nbsp;Contact
+                    <li class="nav-item mx-1"><a href="" class="nav-link"><i class="fa-solid fa-phone">&nbsp;&nbsp;Contact
                                 Us&nbsp;&nbsp;&nbsp;</i></a></li>
                 </ul>
             </div>
@@ -56,13 +85,13 @@
         <div class="carousel slide shadow my-3" id="slideshow">
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="./Carousel 1.png" alt="" width="100%" height="400px" class="rounded">
+                    <img src="./Carousel 1.png" alt="" width="100%" height="530px" class="rounded">
                 </div>
                 <div class="carousel-item">
-                    <img src="./Carosel 2 new.png" alt="" width="100%" height="400px" class="rounded">
+                    <img src="./Carosel 2 new.png" alt="" width="100%" height="530px" class="rounded">
                 </div>
                 <div class="carousel-item">
-                    <img src="./Carousel 3.png" alt="" width="100%" height="400px" class="rounded">
+                    <img src="./Carousel 3.png" alt="" width="100%" height="530px" class="rounded">
                 </div>
             </div>
             <button class="carousel-control-prev" data-bs-target="#slideshow" data-bs-slide="prev">
@@ -73,7 +102,80 @@
             </button>
         </div>
     </div>
-      
+    <!--carousel ends-->
+    <!--Category starts-->
+    <div class="container-fluid" style="width:100%; height: 100vh; background: #BBD2C5;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #536976, #BBD2C5);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #536976, #BBD2C5); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+     ">
+        <div class="container" >
+            <h1 id="heading" style="text-align: center; color: #1d3557;"> <br> Choose Your Favourite Way to get Fit!!</h1>
+        </div>
+        <div class="container" style="display: flex; margin-top: 50px;">
+            <div class="container"><a href=""><img id="img1" src="./img 1.png" alt="" height="300px" width="300px";"></a>
+            </div>
+            <div class="container"><a href=""> <img id="img2" src="./img 2.png" alt="" height="300px" width="300px" style="margin-left: 73px;"></a>
+            </div>
+            <div class="container"> <a href=""> <img id="img3" src="./img 3.png" alt="" height="300px" width="300px" style="margin-left: 73px;"></a>
+            </div>
+        </div>
+    </div>
+    <!--Category ends-->
+    <!--Resources starts-->
+    <div class="container-fluid" style="width: 100%; height: 100vh;">
+        <div class="container"><h1 id="Resources" style="text-align: center;">Resources</h1></div>
+        <div class="row">
+            <div class="col-3">
+                 <div class="card">
+                    <div class="card-header bg-primary">
+                        <img class="card-img-top rounded rounded-circle px-3 py-5"  src="./img 1.png" alt="" height="400px" width="200px">
+                        
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text text-center">Lorem ipsum dolor sit amet.</p>
+                       <button class="btn btn-outline rounded clickbtn" style="margin-left: 85px; border: 2px solid #1d3557;">Click Here</button>
+                    </div>
+                 </div>
+         </div>
+            <div class="col-3">
+                <div class="card">
+                    <div class="card-header bg-primary">
+                        <img class="card-img-top rounded rounded-circle px-3 py-5"  src="./img 1.png" alt="" height="400px" width="200px">
+                        
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text text-center">Lorem ipsum dolor sit amet.</p>
+                       <button class="btn btn-outline rounded clickbtn" style="margin-left: 85px; border: 2px solid #1d3557;">Click Here</button>
+                    </div>
+                 </div>
+            </div>
+            <div class="col-3">
+                <div class="card">
+                    <div class="card-header bg-primary">
+                        <img class="card-img-top rounded rounded-circle px-3 py-5"  src="./img 1.png" alt="" height="400px" width="200px">
+                        
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text text-center">Lorem ipsum dolor sit amet.</p>
+                       <button class="btn btn-outline rounded clickbtn" style="margin-left: 85px; border: 2px solid #1d3557;">Click Here</button>
+                    </div>
+                 </div>
+            </div>
+            <div class="col-3">
+                <div class="card">
+                    <div class="card-header bg-primary">
+                        <img class="card-img-top rounded rounded-circle px-3 py-5"  src="./img 1.png" alt="" height="400px" width="200px">
+                        
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text text-center">Lorem ipsum dolor sit amet.</p>
+                       <button class="btn btn-outline rounded clickbtn" style="margin-left: 85px; border: 2px solid #1d3557;">Click Here</button>
+                    </div>
+                 </div>
+            </div>
+        </div>
+    </div>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
