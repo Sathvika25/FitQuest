@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dance Fitness Website</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    #dabba {
+      width: 400px;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+    }
+
+    select, button {
+      font-size: 16px;
+      padding: 10px;
+      margin-bottom: 20px;
+      display: block;
+      width: 100%;
+    }
+
+    button {
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <div id="dabba">
+    <h1>Dance Fitness Levels</h1>
+    <select id="levelSelect">
+      <option value="beginner">Beginner</option>
+      <option value="intermediate">Intermediate</option>
+      <option value="advanced">Advanced</option>
+    </select>
+    <button id="redirectButton">Go to Level</button>
+  </div>
+
+  <script>
+    document.getElementById('redirectButton').addEventListener('click', function() {
+      var level = document.getElementById('levelSelect').value;
+      var redirectUrl;
+
+      switch (level) {
+        case 'beginner':
+          redirectUrl = 'beginner.html';
+          break;
+        case 'intermediate':
+          redirectUrl = 'intermediate.html';
+          break;
+        case 'advanced':
+          redirectUrl = 'advanced.html';
+          break;
+        default:
+          redirectUrl = 'beginner.html'; // Default redirect to beginner page
+      }
+
+      window.location.href = redirectUrl;
+    });
+  </script>
+</body>
+</html>

@@ -20,6 +20,20 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Acme&family=Exo+2:ital,wght@0,100..900;1,100..900&family=Jersey+20&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Acme&family=Dosis:wght@200..800&family=Exo+2:ital,wght@0,100..900;1,100..900&family=Jersey+20&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
     <style>
         #logo {
             font-family: "Exo 2", sans-serif;
@@ -34,39 +48,68 @@
         #img3 {
             border-radius: 20px;
         }
+
         #heading,
-        #Resources{
+        #Resources {
             font-family: "Acme", sans-serif;
             font-weight: 400;
             font-style: normal;
-            font-size: 74px;
+            font-size: 80px;
         }
 
         .nav-link:hover {
-    border: 2px solid #474747;
-    border-radius: 10px;
-    box-shadow: 0px 3px 0px #474747;
-  }
-        .clickbtn:hover{
-            border: 2px solid #9c8098;
-    border-radius: 10px;
-    box-shadow: 0px 3px 0px #9c8098;
+            border: 2px solid #474747;
+            border-radius: 10px;
+            box-shadow: 0px 3px 0px #474747;
         }
-        .clickbtn{
+
+        .clickbtn:hover {
+            border: 2px solid #9c8098;
+            border-radius: 10px;
+            box-shadow: 0px 3px 0px #9c8098;
+        }
+
+        .clickbtn {
             background-color: #9a8c98;
         }
-        .card-body{
+
+        .card-body {
             background-color: #F2E9E4;
         }
-        a{
+
+        a {
             text-decoration: none;
-            color:black ;
+            color: black;
+        }
+
+        #hello {
+            font-family: "Jersey 20", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        #about {
+            font-family: "Dosis", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 700;
+            font-size: 30px;
+            font-style: normal;
+        }
+
+        #details {
+            font-family: "Exo 2", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 500;
+            font-style: normal;
+            font-size: 20px;
+            margin-left: 50px;
+            color: #abc4ff;
         }
     </style>
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-md shadow fixed-top bg-light">
+    <nav class="navbar navbar-expand-md shadow fixed-top bg-light" style="height: 60px;">
         <div class="container-fluid">
             <div class="container" style="display: flex;">
                 <img style="margin-left: 40px;" src="./logo_1 nobg.png" alt="" height="60px" width="110px">
@@ -75,24 +118,27 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
             </div>
-            <div class="container navbar-collapse collapse" id="navbar">
+            <div class="container navbar-collapse collapse" id="navbar" style="margin-right: 60px;">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item mx-1"><a href="#" class="nav-link"><i
-                                class="fa-solid fa-house">&nbsp;&nbsp;Home&nbsp;&nbsp;&nbsp;</i></a></li>
-                    <li class="nav-item mx-1"><a href="#" class="nav-link"><i
-                                class="fa-solid fa-users-line">&nbsp;&nbsp;Category&nbsp;&nbsp;&nbsp;</i></a></li>
-                    <li class="nav-item mx-1"><a href="" class="nav-link"><i
-                                class="fa-solid fa-newspaper">&nbsp;&nbsp;Resources&nbsp;&nbsp;&nbsp;</i></a></li>
-                    <li class="nav-item mx-1"><a href="" class="nav-link"><i class="fa-solid fa-phone">&nbsp;&nbsp;Contact
-                                Us&nbsp;&nbsp;&nbsp;</i></a></li>
+                    <li class="nav-item mx-2"><a href="#" class="nav-link"><i
+                                class="fa-solid fa-house">&nbsp;&nbsp;Home&nbsp;&nbsp;</i></a></li>
+                    <li class="nav-item mx-2"><a href="https://www.calculator.net/calorie-calculator.html" target="_blank" class="nav-link"><i class="fa-solid fa-calculator">&nbsp;&nbsp;Calorie
+                                Calculator&nbsp;&nbsp;</i></a></li>
+                    <li class="nav-item mx-2"><a href="#Categories" class="nav-link"><i
+                                class="fa-solid fa-users-line">&nbsp;&nbsp;Category&nbsp;&nbsp;</i></a></li>
+                    <li class="nav-item mx-2"><a href="#Res" class="nav-link"><i
+                                class="fa-solid fa-newspaper">&nbsp;&nbsp;Resources&nbsp;&nbsp;</i></a></li>
+                    <li class="nav-item mx-2"><a href="#Contacts" class="nav-link"><i
+                                class="fa-solid fa-phone">&nbsp;&nbsp;Contact&nbsp;&nbsp;</i></a></li>
                 </ul>
             </div>
         </div>
     </nav>
     <!--nav bar ends-->
     <!--carousel starts-->
-    <div class="container-fluid" style="height: 85vh;">
-        <div class="carousel slide shadow" id="slideshow" style="margin-top: 100px;">
+    <div class="container-fluid" style="height: 100vh; background-color:#b6a1d3;">
+        <br><br><br><br><br>
+        <div class="carousel slide shadow" id="slideshow" style="">
             <div class="carousel-inner">
                 <div class="carousel-item active">
                     <img src="./Carousel 1.png" alt="" width="100%" height="530px" class="rounded">
@@ -114,77 +160,99 @@
     </div>
     <!--carousel ends-->
     <!--Category starts-->
-    <div class="container-fluid" style="width:100%; height: 100vh; background:#2b4b79">
-        <div class="container" >
-            <h1 id="heading" style="text-align: center; color: #caf0f8;"> <br> Choose Your Favourite Way to get Fit!!</h1>
+    <div class="container-fluid" style="width:100%; height: 100vh; background: #4e4e7c;" id="Categories">
+        <div class="container">
+            <h1 id="heading" style="text-align: center; color: whitesmoke;"> <br> Choose Your Favourite Way to get Fit!!
+            </h1>
         </div>
         <div class="container" style="display: flex; margin-top: 50px;">
-            <div class="container"><a href=""><img id="img1" src="./img 1.png" alt="" height="300px" width="300px";"></a>
+            <div class="container"><a href=""><img id="img1" src="./img 1.png" alt="" height="300px" width="300px"
+                        ;"></a>
             </div>
-            <div class="container"><a href=""> <img id="img2" src="./img 2.png" alt="" height="300px" width="300px" style="margin-left: 73px;"></a>
+            <div class="container"><a href=""> <img id="img2" src="./img 2.png" alt="" height="300px" width="300px"
+                        style="margin-left: 73px;"></a>
             </div>
-            <div class="container"> <a href=""> <img id="img3" src="./img 3.png" alt="" height="300px" width="300px" style="margin-left: 73px;"></a>
+            <div class="container"> <a href=""> <img id="img3" src="./img 3.png" alt="" height="300px" width="300px"
+                        style="margin-left: 73px;"></a>
             </div>
         </div>
     </div>
     <!--Category ends-->
     <!--Resources starts-->
-    <div class="container-fluid" style="width: 100%; height: 100vh; background: #4e4e7c">
-        <div class="container"><h1 id="Resources" style="text-align: center; color: whitesmoke;">Resources</h1></div>
+    <div class="container-fluid" style="width: 100%; height: 100vh; background: #4e4e7c;" id="Res">
+        <div class="container">
+            <h1 id="Resources" style="text-align: center; color: whitesmoke;margin-bottom: 60px;">Resources</h1>
+        </div>
         <div class="row">
             <div class="col-3">
-                 <div class="card">
+                <div class="card">
                     <div class="card-header">
-                        <img class="card-img-top rounded rounded-circle px-2 py-4"  src="./Resources 1.jpg" alt="" height="300px" width="200px">
-                        
+                        <img class="card-img-top rounded rounded-circle px-2 py-4" src="./Resources 1.jpg" alt=""
+                            height="300px" width="200px">
+
                     </div>
                     <div class="card-body">
                         <h5 class="card-text text-center">What is Mental Fitness?</h5>
-                       <button class="btn btn-outline rounded clickbtn" style="margin-left: 85px; border: 2px solid #9a8c98;"><a target="_blank" href="https://www.betterup.com/blog/what-does-it-mean-to-be-mentally-fit">Click Here</a></button>
+                        <button class="btn btn-outline rounded clickbtn"
+                            style="margin-left: 85px; border: 2px solid #9a8c98;"><a target="_blank"
+                                href="https://www.betterup.com/blog/what-does-it-mean-to-be-mentally-fit">Click
+                                Here</a></button>
                     </div>
-                 </div>
-         </div>
+                </div>
+            </div>
             <div class="col-3">
                 <div class="card">
                     <div class="card-header">
-                        <img class="card-img-top rounded rounded-circle px-2 py-4"  src="./Resources 2.png" alt="" height="300px" width="200px">
-                        
+                        <img class="card-img-top rounded rounded-circle px-2 py-4" src="./Resources 2.png" alt=""
+                            height="300px" width="200px">
+
                     </div>
                     <div class="card-body">
                         <h5 class="card-text text-center">Power of Consistency!</h5>
-                       <button class="btn btn-outline rounded clickbtn" style="margin-left: 85px; border: 2px solid #9a8c98;"><a target="_blank" href="https://www.factoryweights.co.uk/blogs/news/the-role-of-consistency-in-achieving-your-fitness-goals">Click Here</a></button>
+                        <button class="btn btn-outline rounded clickbtn"
+                            style="margin-left: 85px; border: 2px solid #9a8c98;"><a target="_blank"
+                                href="https://www.factoryweights.co.uk/blogs/news/the-role-of-consistency-in-achieving-your-fitness-goals">Click
+                                Here</a></button>
                     </div>
-                 </div>
+                </div>
             </div>
             <div class="col-3">
                 <div class="card">
                     <div class="card-header">
-                        <img class="card-img-top rounded rounded-circle px-2 py-4"  src="./Resources 3.png" alt="" height="300px" width="200px">
-                        
+                        <img class="card-img-top rounded rounded-circle px-2 py-4" src="./Resources 3.png" alt=""
+                            height="300px" width="200px">
+
                     </div>
                     <div class="card-body">
                         <h5 class="card-text text-center">Yoga Vs Exercise</h5>
-                       <button class="btn btn-outline rounded clickbtn" style="margin-left: 85px; border: 2px solid #9a8c98;"><a target="_blank" href="https://www.whiteswanfoundation.org/amp/story/mental-health-matters/wellbeing/yoga-vs-exercise">Click Here</a></button>
+                        <button class="btn btn-outline rounded clickbtn"
+                            style="margin-left: 85px; border: 2px solid #9a8c98;"><a target="_blank"
+                                href="https://www.whiteswanfoundation.org/amp/story/mental-health-matters/wellbeing/yoga-vs-exercise">Click
+                                Here</a></button>
                     </div>
-                 </div>
+                </div>
             </div>
             <div class="col-3">
                 <div class="card">
                     <div class="card-header">
-                        <img class="card-img-top rounded rounded-circle px-2 py-4"  src="./Resources 4.jpg" alt="" height="300px" width="200px">
-                        
+                        <img class="card-img-top rounded rounded-circle px-2 py-4" src="./Resources 4.jpg" alt=""
+                            height="300px" width="200px">
+
                     </div>
                     <div class="card-body">
                         <h5 class="card-text text-center">Dance for Fitness</h5>
-                       <button class="btn btn-outline rounded clickbtn" style="margin-left: 85px; border: 2px solid #9a8c98;"><a target="_blank" href="https://carolinadance.com/about/news/why-dancing-is-the-best-form-of-exercise">Click Here</a> </button>
+                        <button class="btn btn-outline rounded clickbtn"
+                            style="margin-left: 85px; border: 2px solid #9a8c98;"><a target="_blank"
+                                href="https://carolinadance.com/about/news/why-dancing-is-the-best-form-of-exercise">Click
+                                Here</a> </button>
                     </div>
-                 </div>
+                </div>
             </div>
         </div>
     </div>
 
-      <!--contact us starts-->
-  <div class="container-fluid" id="contact" style=" width: 100%; height: 80vh; background: #BBD2C5;  /* fallback for old browsers */
+    <!--contact us starts-->
+    <!-- <div class="container-fluid" id="contact" style=" width: 100%; height: 80vh; background: #BBD2C5;  /* fallback for old browsers */
   background: -webkit-linear-gradient(to right, #536976, #BBD2C5);  /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(to right, #536976, #BBD2C5); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
    ">
@@ -205,17 +273,45 @@
         <img src="./logo_1 nobg.png" alt="FitQuest" width="240px" height="240px" style="margin-bottom: 20px;margin-left: 70px;">
       </div>
     </div>
-  </div>
-  <!--contact us ends-->
-  <div class="footer" style="background: #A1FFCE;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #FAFFD1, #A1FFCE);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #FAFFD1, #A1FFCE); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  ">
+  </div> -->
+    <!--contact us ends-->
+    <!--contact us-->
+    <div class="container-fluid" style="height: 100vh;background-color:#b6a1d3;" id="Contacts">
+        <div class="row"><br><br><br><br></div>
+        <div class="row" style="">
+            <div class="col-1"></div>
+            <div class="col-5" style="background-color: #49237d;">
+                <h1 style="font-size: 90px;color: white;" id="hello">Hello!</h1>
+                <h2 style="color: #d0b6f2; " id="about"><br><br> <span
+                        style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">FitQuest</span>
+                    is a space where you could work-out<br> in
+                    a way which complements and motivates you to get Fit. It is a community that tends to stride towards
+                    a healthier future through sheer hard-work in a holistic online environment.</h2>
+                <br></h2>
+                <div class="row">
+                    <div class="col-6"></div>
+                    <div class="col-6" s>
+                        <h3 id="details"><br>For any queries, <br>reach out to us at:
+                            <br><span style="color: #5f949d;">FitQuest@gmail.com</span>
+                        </h3>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-5" style="background-color: #9372c3;">
+                <img src="./contact_us-removebg-preview.png" alt="" height="500px" width="500px"
+                    style="margin-right: 40px;">
+            </div>
+            <div class="col-1"></div>
+        </div>
+
+    </div>
+    <div class="footer bg-light" style="height: 40px;">
         <h5 class="text-center py-3">
             <span class="fw-bold border-end border-2 border-dark px-3">&copy; FITQUEST</span>
-        <span class="text-uppercase px-3 lead">all rights reserved</span>
+            <span class="text-uppercase px-3 lead">all rights reserved</span>
         </h5>
-        </div>
+    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
