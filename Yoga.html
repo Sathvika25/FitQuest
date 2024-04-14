@@ -3,15 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dance Fitness Website</title>
+  <title>Yoga</title>
   <style>
     body {
       font-family: Arial, sans-serif;
       text-align: center;
       display: flex;
+      flex-direction: column; /* Added to stack elements vertically */
       justify-content: center;
       align-items: center;
       height: 100vh;
+      background-image: url('yoga_img.png');
+      background-size: cover;
     }
 
     #dabba {
@@ -19,9 +22,11 @@
       padding: 20px;
       border: 1px solid #ccc;
       border-radius: 5px;
+      background-color: white;
+      margin-top: 20px; /* Added to create space between heading and dabba */
     }
 
-    h1 {
+    #h1 {
       margin-bottom: 20px;
     }
 
@@ -47,8 +52,9 @@
   </style>
 </head>
 <body>
+  <h1>Welcome to Yoga Sessions</h1> <!-- Moved the heading above the dabba -->
   <div id="dabba">
-    <h1>Dance Fitness Levels</h1>
+    <h2>Choose your level:</h2> <!-- Changed from h1 to h2 -->
     <select id="levelSelect">
       <option value="beginner">Beginner</option>
       <option value="intermediate">Intermediate</option>
@@ -64,16 +70,16 @@
 
       switch (level) {
         case 'beginner':
-          redirectUrl = 'beginner.html';
+          redirectUrl = 'y_beginner.html';
           break;
         case 'intermediate':
-          redirectUrl = 'intermediate.html';
+          redirectUrl = 'y_intermediate.html';
           break;
         case 'advanced':
-          redirectUrl = 'advanced.html';
+          redirectUrl = 'y_advance.html';
           break;
         default:
-          redirectUrl = 'beginner.html'; // Default redirect to beginner page
+          redirectUrl = 'Yoga.html'; // Default redirect to beginner page
       }
 
       window.location.href = redirectUrl;
@@ -81,3 +87,92 @@
   </script>
 </body>
 </html>
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yoga</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-image:url('yoga_img.png');
+      background-size: cover;
+    }
+
+    #dabba {
+      width: 400px;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      background-color: white;
+    }
+
+    #h1 {
+      margin-bottom: 20px;
+    }
+
+    select, button {
+      font-size: 16px;
+      padding: 10px;
+      margin-bottom: 20px;
+      display: block;
+      width: 100%;
+    }
+
+    button {
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <div><h1 id="h1">yoga</h1></div>
+  
+  <div id="dabba">
+    <h2>Choose your level:</h2>
+    <select id="levelSelect">
+      <option value="beginner">Beginner</option>
+      <option value="intermediate">Intermediate</option>
+      <option value="advanced">Advanced</option>
+    </select>
+    <button id="redirectButton">Go to Level</button>
+  </div>
+
+  <script>
+    document.getElementById('redirectButton').addEventListener('click', function() {
+      var level = document.getElementById('levelSelect').value;
+      var redirectUrl;
+
+      switch (level) {
+        case 'beginner':
+          redirectUrl = 'y_beginner.html';
+          break;
+        case 'intermediate':
+          redirectUrl = 'y_intermediate.html';
+          break;
+        case 'advanced':
+          redirectUrl = 'y_advance.html';
+          break;
+        default:
+          redirectUrl = 'Yoga.html'; // Default redirect to beginner page
+      }
+
+      window.location.href = redirectUrl;
+    });
+  </script>
+</body>
+</html> -->
