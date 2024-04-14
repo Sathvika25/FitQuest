@@ -3,39 +3,191 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bootstrap Video Example</title>
-  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <title>Yoga</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jersey+20&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      display: flex;
+      flex-direction: column; /* Added to stack elements vertically */
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-image: url('exercise_img.png');
+      background-size: cover;
+    }
+
+    #dabba {
+      width: 500px;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      background-color: rgb(247, 240, 231);
+      margin-top: 20px; /* Added to create space between heading and dabba */
+    }
+
+    #h1 {
+      margin-bottom: 20px;
+    }
+
+    select, button {
+      font-size: 16px;
+      padding: 10px;
+      margin-bottom: 20px;
+      display: block;
+      width: 100%;
+    }
+
+    button {
+      background-color: black;
+      color: wheat;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: black;
+      color: white;
+    }
+    #header{
+      font-family: "Jersey 20", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 100px;
+  color: white;
+  text-decoration:double;
+    }
+    #Choose{
+      font-size: 35px;
+    }
+  </style>
 </head>
 <body>
-
-<div class="container mt-5">
-  <div class="row">
-    <div class="col-md-6">
-      <div class="card">
-        <div class="card-header">
-          Card Header
-        </div>
-        <div class="card-body">
-          <p class="card-text">This is the body of the card. You can put any content here.</p>
-        </div>
-        <div class="card-footer">
-          Card Footer
-        </div>
-      </div>
-    </div>
-    <div class="col-md-6">
-      <div class="embed-responsive embed-responsive-16by9">
-        <video class="embed-responsive-item" controls>
-          <source src="your_video.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
-      </div>
-    </div>
+  <h1 id="header">Welcome to the Exercise Session!!</h1> <!-- Moved the heading above the dabba -->
+  <div id="dabba">
+    <h2 id="Choose">Choose your level:</h2> <!-- Changed from h1 to h2 -->
+    <select id="levelSelect">
+      <option value="beginner">Beginner</option>
+      <option value="intermediate">Intermediate</option>
+      <option value="advanced">Advanced</option>
+    </select>
+    <button id="redirectButton">Go to Level</button>
   </div>
-</div>
 
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script>
+    document.getElementById('redirectButton').addEventListener('click', function() {
+      var level = document.getElementById('levelSelect').value;
+      var redirectUrl;
+
+      switch (level) {
+        case 'beginner':
+          redirectUrl = 'y_beginner.html';
+          break;
+        case 'intermediate':
+          redirectUrl = 'y_intermediate.html';
+          break;
+        case 'advanced':
+          redirectUrl = 'y_advance.html';
+          break;
+        default:
+          redirectUrl = 'Yoga.html'; // Default redirect to beginner page
+      }
+
+      window.location.href = redirectUrl;
+    });
+  </script>
 </body>
 </html>
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yoga</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-image:url('yoga_img.png');
+      background-size: cover;
+    }
+
+    #dabba {
+      width: 400px;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      background-color: white;
+    }
+
+    #h1 {
+      margin-bottom: 20px;
+    }
+
+    select, button {
+      font-size: 16px;
+      padding: 10px;
+      margin-bottom: 20px;
+      display: block;
+      width: 100%;
+    }
+
+    button {
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <div><h1 id="h1">yoga</h1></div>
+  
+  <div id="dabba">
+    <h2>Choose your level:</h2>
+    <select id="levelSelect">
+      <option value="beginner">Beginner</option>
+      <option value="intermediate">Intermediate</option>
+      <option value="advanced">Advanced</option>
+    </select>
+    <button id="redirectButton">Go to Level</button>
+  </div>
+
+  <script>
+    document.getElementById('redirectButton').addEventListener('click', function() {
+      var level = document.getElementById('levelSelect').value;
+      var redirectUrl;
+
+      switch (level) {
+        case 'beginner':
+          redirectUrl = 'y_beginner.html';
+          break;
+        case 'intermediate':
+          redirectUrl = 'y_intermediate.html';
+          break;
+        case 'advanced':
+          redirectUrl = 'y_advance.html';
+          break;
+        default:
+          redirectUrl = 'Yoga.html'; // Default redirect to beginner page
+      }
+
+      window.location.href = redirectUrl;
+    });
+  </script>
+</body>
+</html> -->
