@@ -13,7 +13,13 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Platypi:ital,wght@0,300..800;1,300..800&display=swap"
+        rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Acme&display=swap" rel="stylesheet">
     <style>
+        body{
+            background-color: rgb(225, 250, 188);
+        }
         #logo {
             font-family: "Exo 2", sans-serif;
             font-optical-sizing: auto;
@@ -33,6 +39,18 @@
         }
         .card-header{
             background-color: rgb(7, 209, 209);
+        }
+        #welcome {
+            font-family: "Acme", sans-serif;
+  font-weight: 400;
+  font-size: 60px;
+  font-style: normal;
+        }
+        #lets{
+            font-family: "Platypi", serif;
+  font-size: 40px;
+  font-weight: 600;
+  font-style: normal;
         }
     </style>
 </head>
@@ -64,8 +82,8 @@
         </div>
     </nav>
     <!--nav bar ends-->
-    <h1 style="margin-top: 90px;text-align: center;">Welcome to Bhangra workout!!</h1>
-    <h2 style="margin-top: 20px;text-align: center;">Let's get started!!</h2>
+    <h1 id="welcome" style="margin-top: 90px;text-align: center;">Welcome to Bhangra workout!!</h1>
+    <h2 id="lets" style="margin-top: 20px;text-align: center;">Let's get started!!</h2>
     <div class="container">
         <div class="row">
             <div class="col-md-4">
