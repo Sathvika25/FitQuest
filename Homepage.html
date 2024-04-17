@@ -105,6 +105,82 @@
             margin-left: 50px;
             color: #abc4ff;
         }
+        .chat-container {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            max-width: 400px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            overflow: hidden;
+            display: none;
+            z-index: 1000;
+        }
+        .chat-box {
+            height: 200px;
+            overflow-y: scroll;
+            padding: 10px;
+            background-color: #f9f9f9;
+        }
+        .message {
+            margin-bottom: 10px;
+        }
+        .user-message {
+            text-align: right;
+            color:#49237d;
+        }
+        .bot-message {
+            text-align: left;
+            color: #8103a1;
+        }
+        .input-box {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: #f0f0f0;
+        }
+        .input-box input {
+            flex: 1;
+            margin-right: 10px;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            font-size: 16px;
+        }
+        .input-box button {
+            padding: 8px 15px;
+            background-color: #9d00ff;
+            border: none;
+            border-radius: 3px;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .chat-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #a200ff;
+            color: #fff;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            font-size: 24px;
+            line-height: 50px;
+            text-align: center;
+            cursor: pointer;
+        }
+        .close-button {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            cursor: pointer;
+            background-color: #a200ff;
+            border-radius: 100px;
+            color: white;
+        }
     </style>
 </head>
 
@@ -250,31 +326,6 @@
             </div>
         </div>
     </div>
-
-    <!--contact us starts-->
-    <!-- <div class="container-fluid" id="contact" style=" width: 100%; height: 80vh; background: #BBD2C5;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #536976, #BBD2C5);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #536976, #BBD2C5); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-   ">
-    <div class="row" style="background: #BBD2C5;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #536976, #BBD2C5);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #536976, #BBD2C5); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-     ">
-      <div class="col-md-8 col-sm-12">
-        <div class="container">
-          <h1 style="font-family: Balsamiq Sans, sans-serif; color:#1d3557;font-size:70px;text-align: center;"><span style="margin-left: 50px;"></span>Hello Folks!!</h1>
-        <h2 style="color:#01497C;font-size: 30px;text-align:center;"><span class="fw-bold" style="color: #013A63;">FitQuest</span>, a space where you could work-out<br> in a way which complements and motivates you to get Fit. <br>It is a community that tends to stride towards a healthier future through sheer hard-work in a holistic <br>online environment.</h2>
-        <br>
-          <h3 style="color:#8c3646;text-align: center; ">Contact us at: <span class=><a href="#" style="text-decoration: none;color: #421820;"><b>FitQuest@gmail.com</b></a></span></h3>
-        </div>
-        
-      </div>
-      <div class="col-md-4 col-sm-12 ">
-        <img src="./logo_1 nobg.png" alt="FitQuest" width="240px" height="240px" style="margin-bottom: 20px;margin-left: 70px;">
-      </div>
-    </div>
-  </div> -->
-    <!--contact us ends-->
     <!--contact us-->
     <div class="container-fluid" style="height: 90vh;background-color:#b6a1d3;" id="Contacts">
         <div class="row"></div>
@@ -311,6 +362,119 @@
             <span class="fw-bold text-center" style="font-style: italic;" >FitQuest</span>
         </h5>
     </div>
+    <button class="chat-button" onclick="toggleChat()">💬</button>
+    <div class="chat-container" id="chat-container">
+        <div class="chat-box" id="chat-box">
+            <!-- Initial welcome message -->
+            <div class="message bot-message"><br>Welcome to Fitbot! How can I assist you today?</div>
+        </div>
+        <div class="close-button" onclick="toggleChat()">&nbsp;&nbsp;<i class="fa-solid fa-xmark"></i>&nbsp;&nbsp;</div>
+          <div class="input-box">
+            <input type="text" id="user-input" placeholder="Type your message...">
+            <button onclick="sendMessage()">Send</button>
+         </div>
+    </div>
+    <script>
+        function toggleChat() {
+            var chatContainer = document.getElementById("chat-container");
+            chatContainer.style.display = chatContainer.style.display === "none" ? "block" : "none";
+        }
+
+        // Define fixed questions and their corresponding fixed answers
+        const fixedResponses = {
+            "what is your name?": "I'm Fitbot, your fitness assistant!",
+            "how are you?": "I'm doing well, thank you!",
+    "What are the benefits of drinking water?": "Drinking water helps maintain bodily functions, aids digestion, supports metabolism, and keeps your skin hydrated.",
+    "How many hours of sleep do I need per night?": "Most adults need 7-9 hours of quality sleep per night to function optimally.",
+    "What foods should I eat for a balanced diet?": "A balanced diet includes fruits, vegetables, lean proteins, whole grains, and healthy fats.",
+    "What are some ways to reduce stress?": "You can reduce stress by practicing relaxation techniques like deep breathing, meditation, or yoga, as well as engaging in physical activity and maintaining a healthy lifestyle.",
+    "How can I improve my posture?": "To improve your posture, focus on exercises that strengthen your core muscles, stretch tight muscles, and practice proper sitting and standing alignment.",
+    "What are the benefits of regular exercise?": "Regular exercise can improve cardiovascular health, strengthen muscles and bones, boost mood, and increase energy levels.",
+    "How can I boost my immune system?": "To boost your immune system, focus on eating a balanced diet, getting regular exercise, managing stress, getting enough sleep, and practicing good hygiene habits.",
+    "What are some tips for staying hydrated during exercise?": "Drink water before, during, and after exercise, and consider sports drinks if you're exercising intensely for longer durations.",
+    "How can I improve my flexibility?": "You can improve flexibility by regularly practicing stretching exercises, yoga, and activities like Pilates.",
+    "What are some benefits of getting outdoors for exercise?": "Exercising outdoors can boost mood, provide vitamin D from sunlight exposure, and offer a change of scenery which can enhance motivation.",
+    "What are some beginner-friendly exercises to start with?": "Walking, jogging, swimming, cycling, and bodyweight exercises like squats, lunges, and push-ups are great options for beginners.",
+    "How can I stay motivated to exercise regularly?": "Set specific, achievable goals, vary your workouts to keep them interesting, find an exercise buddy or group for accountability, and reward yourself for reaching milestones.",
+    "What should I include in a well-rounded workout routine?": "A well-rounded workout routine includes cardiovascular exercise, strength training, flexibility exercises, and rest days for recovery.",
+    "Is it better to do cardio or strength training for weight loss?": "Both cardio and strength training are important for weight loss. Cardio burns calories during the workout, while strength training builds muscle which increases metabolism and burns more calories at rest.",
+    "How often should I exercise each week?": "Aim for at least 150 minutes of moderate-intensity aerobic activity or 75 minutes of vigorous-intensity aerobic activity per week, plus muscle-strengthening activities on 2 or more days per week.",
+    "What are some effective exercises for toning my abs?": "Exercises like crunches, planks, bicycle crunches, and leg raises target the abdominal muscles and can help tone and strengthen your core.",
+    "Can I build muscle without using weights?": "Yes, bodyweight exercises like push-ups, squats, lunges, and pull-ups can help build muscle, especially for beginners or those without access to weights.",
+    "What are some signs of overtraining?": "Signs of overtraining include persistent fatigue, decreased performance, increased resting heart rate, mood disturbances, and frequent illness or injury.",
+    "How long does it take to see results from exercise?": "Results vary depending on factors like genetics, diet, and exercise intensity, but you may start to see improvements in strength and endurance within a few weeks, and visible changes in body composition within a few months.",
+    "What are some tips for preventing workout injuries?": "Warm up before exercising, use proper form, gradually increase intensity, listen to your body, and incorporate rest days into your routine for recovery.",
+    "What are the benefits of dance for fitness?": "Dance for fitness can improve cardiovascular health, coordination, flexibility, and mood, while providing a fun and social form of exercise.",
+    "What are some popular dance styles for fitness?": "Zumba, hip hop, salsa, and aerobics are popular dance styles for fitness that combine dance moves with aerobic exercise.",
+    "Do I need dance experience to do dance fitness classes?": "No, dance fitness classes are designed for all fitness levels and can be modified to suit beginners. The focus is on having fun and moving to the music.",
+    "How many calories can I burn during a dance fitness workout?": "Calories burned during a dance fitness workout vary depending on factors like intensity, duration, and individual body weight, but it can range from 200-600 calories per hour.",
+    "Can dance fitness help with weight loss?": "Yes, dance fitness can aid in weight loss by burning calories and increasing overall physical activity levels. Consistent participation in dance fitness classes, along with a balanced diet, can contribute to weight loss goals.",
+    "What should I wear to a dance fitness class?": "Wear comfortable, breathable clothing that allows for ease of movement, and supportive athletic shoes with good cushioning and traction.",
+    "Are there online dance fitness classes I can join?": "Yes, there are many online platforms and streaming services that offer a variety of dance fitness classes led by certified instructors. You can find everything from high-energy cardio dance workouts to more relaxed and choreographed routines.",
+    "What are some beginner-friendly dance fitness moves?": "Basic steps like grapevines, step touches, and cha-chas are often used in beginner-friendly dance fitness classes. These moves are easy to learn and can be combined to create fun and effective workouts.",
+    "How can I improve my coordination for dance fitness?": "Practice regularly and focus on breaking down movements into smaller, manageable steps. Start with slower-paced routines and gradually increase the tempo as your coordination improves.",
+    "Are there dance fitness classes specifically for seniors?": "Yes, there are dance fitness classes designed specifically for seniors that focus on low-impact movements, balance exercises, and gentle stretching. These classes cater to the needs and abilities of older adults while providing an enjoyable way to stay active.",
+    "What are the benefits of strength training?": "Strength training can increase muscle mass, improve bone density, enhance metabolism, and help prevent age-related muscle loss.",
+    "How can I prevent muscle soreness after exercise?": "To prevent muscle soreness, warm up before exercising, gradually increase intensity, stay hydrated, stretch after workouts, and consider using foam rollers or massage therapy.",
+    "What are some bodyweight exercises I can do at home?": "Push-ups, squats, lunges, planks, and burpees are effective bodyweight exercises that target multiple muscle groups and require minimal or no equipment.",
+    "How long should I rest between sets during strength training?": "Rest periods between sets depend on factors like intensity, goals, and fitness level. Generally, rest for 30-90 seconds between sets for muscle hypertrophy and strength gains, and longer for muscular endurance.",
+    "What is the best time of day to exercise?": "The best time to exercise is whenever it fits into your schedule and when you feel most energetic and motivated. Some people prefer morning workouts to jumpstart their day, while others prefer evening workouts to unwind after work.",
+    "What are some benefits of high-intensity interval training (HIIT)?": "HIIT can improve cardiovascular health, increase metabolism, burn more calories in less time, and enhance overall fitness levels.",
+    "Can I exercise while fasting?": "Exercising while fasting can be safe for some individuals, but it depends on factors like overall health, fitness level, and type of fasting. Consult with a healthcare professional or registered dietitian before exercising while fasting.",
+    "What are some tips for staying active during the workday?": "Take short breaks to stretch or walk, use a standing desk, take the stairs instead of the elevator, and schedule exercise sessions before or after work to stay active during the workday.",
+    "How can I improve my running endurance?": "To improve running endurance, gradually increase mileage, incorporate interval training, cross-train with other forms of cardiovascular exercise, and focus on proper nutrition and hydration.",
+    "Is it better to exercise alone or with a workout partner?": "Both solo and group exercise have benefits. Exercising alone allows for flexibility and autonomy, while working out with a partner can provide motivation, accountability, and social support.",
+    "What are the benefits of practicing yoga?": "Yoga can improve flexibility, strength, balance, posture, and mental well-being. It also helps reduce stress, anxiety, and chronic pain.",
+    "How often should I practice yoga?": "Practicing yoga 2-3 times per week is beneficial for maintaining flexibility and strength. However, even a short daily practice can have positive effects on physical and mental health.",
+    "What equipment do I need for yoga?": "You can practice yoga with just a yoga mat, but additional props like blocks, straps, and bolsters can enhance your practice and provide support and alignment assistance.",
+    "What are some beginner-friendly yoga poses?": "Beginner-friendly yoga poses include mountain pose, downward-facing dog, child's pose, warrior I and II, and cat-cow stretch. These poses are accessible to most people and help build a strong foundation for a yoga practice.",
+    "What is the difference between hatha and vinyasa yoga?": "Hatha yoga focuses on static poses and breath control, making it suitable for beginners. Vinyasa yoga is more dynamic and involves flowing sequences of poses coordinated with breath, providing a cardiovascular workout.",
+    "Can yoga help with back pain?": "Yes, yoga can help alleviate back pain by improving spinal flexibility, strengthening core muscles, and promoting proper alignment and posture. Gentle yoga poses and stretches specifically targeting the back can provide relief from discomfort.",
+    "What are some breathing techniques used in yoga?": "Common breathing techniques in yoga include deep belly breathing (diaphragmatic breathing), ujjayi breath (ocean breath), alternate nostril breathing (nadi shodhana), and breath retention (pranayama). These techniques help calm the mind, reduce stress, and increase focus and awareness.",
+    "How can I find the right yoga class for me?": "Experiment with different styles and teachers to find a yoga class that suits your preferences and needs. Consider factors like class intensity, pace, atmosphere, and instructor approach.",
+    "Is yoga suitable for seniors?": "Yes, yoga is suitable for seniors and can be modified to accommodate individual needs and physical abilities. Gentle yoga classes focusing on gentle stretches, balance exercises, and relaxation techniques are particularly beneficial for older adults.",
+    "Can yoga help with anxiety and depression?": "Yes, yoga can help manage symptoms of anxiety and depression by promoting relaxation, reducing stress hormones, increasing feel-good neurotransmitters like serotonin, and improving overall emotional well-being."
+            // Add more fixed questions and answers as needed
+        };
+
+        async function sendMessage() {
+            var userInput = document.getElementById("user-input").value.toLowerCase(); // Convert user input to lowercase
+            var chatBox = document.getElementById("chat-box");
+
+            // Append user message to chat box
+            var userMessage = document.createElement("div");
+            userMessage.classList.add("message", "user-message");
+            userMessage.textContent = userInput;
+            chatBox.appendChild(userMessage);
+
+            // Clear user input
+            document.getElementById("user-input").value = "";
+
+            // Check if the input matches any fixed questions (case-insensitive)
+            for (const question in fixedResponses) {
+                if (userInput === question.toLowerCase()) {
+                    appendBotMessage(fixedResponses[question]);
+                    return; // Exit the function early if a match is found
+                }
+            }
+
+            // If no match found, respond with a default message only if the user entered a query
+            if (userInput.trim() !== "") {
+                appendBotMessage("I don't understand what you mean by that. Please ask a question related to fitness and health.");
+            }
+
+            // Scroll to bottom of chat box
+            chatBox.scrollTop = chatBox.scrollHeight;
+        }
+
+        function appendBotMessage(message) {
+            var chatBox = document.getElementById("chat-box");
+            var botMessage = document.createElement("div");
+            botMessage.classList.add("message", "bot-message");
+            botMessage.textContent = message;
+            chatBox.appendChild(botMessage);
+        }
+    </script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
