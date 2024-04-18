@@ -25,13 +25,9 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Acme&family=Exo+2:ital,wght@0,100..900;1,100..900&family=Jersey+20&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Acme&family=Dosis:wght@200..800&family=Exo+2:ital,wght@0,100..900;1,100..900&family=Jersey+20&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
     <style>
@@ -242,11 +238,10 @@
             </h1>
         </div>
         <div class="container" style="display: flex; margin-top: 50px;">
-            <div class="container"><a href="Exercise.html"><img id="img1" src="./img 1.png" alt="" height="300px" width="300px"
-                        ;"></a>
+            <div class="container"><a href="Exercise.html"><img id="img1" src="./img 1.png" alt="" height="300px" width="300px"></a>
             </div>
             <div class="container"><a href="Yoga.html"> <img id="img2" src="./img 2.png" alt="" height="300px" width="300px"
-                        style="margin-left: 73px;"></a>
+                        style="margin-left: 40px;"></a>
             </div>
             <div class="container"> <a href="dance.html"> <img id="img3" src="./img 3.png" alt="" height="300px" width="300px"
                         style="margin-left: 73px;"></a>
@@ -357,6 +352,7 @@
         </div>
 
     </div>
+    <!--bot-->
     <div class="footer bg-light" style="height: 40px;">
         <h5 class="text-center py-3">
             <span class="fw-bold text-center" style="font-style: italic;" >FitQuest</span>
@@ -365,8 +361,7 @@
     <button class="chat-button" onclick="toggleChat()">💬</button>
     <div class="chat-container" id="chat-container">
         <div class="chat-box" id="chat-box">
-            <!-- Initial welcome message -->
-            <div class="message bot-message"><br>Welcomegi to Fitbot! How can I assist you today?</div>
+            <div class="message bot-message"><br>Welcome to Fitbot! How can I assist you today?</div>
         </div>
         <div class="close-button" onclick="toggleChat()">&nbsp;&nbsp;<i class="fa-solid fa-xmark"></i>&nbsp;&nbsp;</div>
           <div class="input-box">
@@ -379,8 +374,6 @@
             var chatContainer = document.getElementById("chat-container");
             chatContainer.style.display = chatContainer.style.display === "none" ? "block" : "none";
         }
-
-        // Define fixed questions and their corresponding fixed answers
         const fixedResponses = {
             "what is your name?": "I'm Fitbot, your fitness assistant!",
             "how are you?": "I'm doing well, thank you!",
@@ -434,36 +427,25 @@
     "How can I find the right yoga class for me?": "Experiment with different styles and teachers to find a yoga class that suits your preferences and needs. Consider factors like class intensity, pace, atmosphere, and instructor approach.",
     "Is yoga suitable for seniors?": "Yes, yoga is suitable for seniors and can be modified to accommodate individual needs and physical abilities. Gentle yoga classes focusing on gentle stretches, balance exercises, and relaxation techniques are particularly beneficial for older adults.",
     "Can yoga help with anxiety and depression?": "Yes, yoga can help manage symptoms of anxiety and depression by promoting relaxation, reducing stress hormones, increasing feel-good neurotransmitters like serotonin, and improving overall emotional well-being."
-            // Add more fixed questions and answers as needed
         };
 
         async function sendMessage() {
-            var userInput = document.getElementById("user-input").value.toLowerCase(); // Convert user input to lowercase
+            var userInput = document.getElementById("user-input").value.toLowerCase(); 
             var chatBox = document.getElementById("chat-box");
-
-            // Append user message to chat box
             var userMessage = document.createElement("div");
             userMessage.classList.add("message", "user-message");
             userMessage.textContent = userInput;
             chatBox.appendChild(userMessage);
-
-            // Clear user input
             document.getElementById("user-input").value = "";
-
-            // Check if the input matches any fixed questions (case-insensitive)
             for (const question in fixedResponses) {
                 if (userInput === question.toLowerCase()) {
                     appendBotMessage(fixedResponses[question]);
-                    return; // Exit the function early if a match is found
+                    return; 
                 }
             }
-
-            // If no match found, respond with a default message only if the user entered a query
             if (userInput.trim() !== "") {
                 appendBotMessage("I don't understand what you mean by that. Please ask a question related to fitness and health.");
             }
-
-            // Scroll to bottom of chat box
             chatBox.scrollTop = chatBox.scrollHeight;
         }
 
